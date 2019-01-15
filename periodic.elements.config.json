@@ -1,0 +1,10 @@
+{
+	"deck_name": "Technical::Science::Chemistry::Periodic Table",
+	"note_type": "Periodic Element",
+	"csv_columns_to_note_fields": {
+		"name": "Element",
+		"symbol": "Symbol",
+		"atomicNumber": "Atomic Number",
+		"yearDiscovered": "Year Discovered"
+	}
+}
