@@ -1,0 +1,8 @@
+{
+    "deck_name": "Geography",
+    "note_type": "Capital City",
+    "csv_columns_to_note_fields": {
+        "name": "Locale",
+        "description": "Capital"
+	}
+}
