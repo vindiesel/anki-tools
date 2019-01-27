@@ -1,0 +1,11 @@
+{
+    "csv_path": "data/country-list.csv",
+    "deck_name": "Geography",
+    "note_type": "Country Capital",
+    "columns_to_note_fields": {
+        "country": "Country",
+        "capital": "Capital"
+    },
+    "allow_duplicates": false,
+    "index_field": "Country"
+}

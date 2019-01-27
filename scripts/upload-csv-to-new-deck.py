@@ -11,7 +11,8 @@ import argparse
 import json
 import itertools
 import os
-from typing import NamedTuple
+import sys
+import typing
 
 
 # third party
@@ -49,7 +50,7 @@ def assert_key_in_dict(k, d):
     assert k in d, f"key={k} is not in dictionary={d}"
 
 
-class ScriptConfig(NamedTuple):
+class ScriptConfig(typing.NamedTuple):
     csv_path: str
     deck_name: str
     note_type: str
@@ -146,7 +147,12 @@ def main():
             }
         })
         assert can_add_notes_check['error'] is None
-        assert all(can_add_notes_check['result']), f'{sum(can_add_notes_check["result"])} / {len(can_add_notes_check["result"])} notes are valid'
+        if not all(can_add_notes_check['result']):
+            for (note, result) in zip(notes_batch, can_add_notes_check['result']):
+                if not result:
+                    print(f"\tFailed Note Fields: {note['fields']}")
+            print(f'{sum(can_add_notes_check["result"])} / {len(can_add_notes_check["result"])} notes are valid. Exiting')
+            sys.exit(1)
         print(f'{len(notes_batch)} notes confirmed to be added')
 
     # Upload notes
