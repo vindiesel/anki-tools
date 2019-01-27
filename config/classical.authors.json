@@ -1,0 +1,9 @@
+{
+    "deck_name": "Language::English::Books",
+    "note_type": "Book",
+    "csv_columns_to_note_fields": {
+        "year": "Year Published",
+        "name": "Author",
+        "title": "Title"
+	}
+}
